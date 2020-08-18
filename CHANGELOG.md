@@ -9,5 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Role `psonoci` to get secrets from a Psono server
+- Role `venom` to run integration tests against PacketFence server
 
 [Unreleased]: https://github.com/inverse-inc/ansible-cumulus/compare/
