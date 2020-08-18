@@ -1,0 +1,8 @@
+---
+- name: Download and install psonoci binary
+  get_url:
+    url: 'https://get.psono.com/psono/psono-ci/{{ psonoci__arch }}-{{ psonoci__os }}/psonoci'
+    dest: "{{ psonoci__bin_path }}/psonoci"
+    mode: '0755'
+    owner: 'root'
+    group: 'root'
