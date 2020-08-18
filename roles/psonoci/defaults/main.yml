@@ -1,0 +1,5 @@
+---
+# defaults file for psonoci
+psonoci__os: 'linux'
+psonoci__arch: 'x86_64'
+psonoci__bin_path: '/usr/bin'

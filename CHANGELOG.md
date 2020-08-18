@@ -7,4 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Role `psonoci` to get secrets from a Psono server
+
 [Unreleased]: https://github.com/inverse-inc/ansible-cumulus/compare/
