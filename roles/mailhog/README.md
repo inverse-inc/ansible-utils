@@ -12,7 +12,7 @@ N/A
 
 See [defaults variables](defaults/main.yml)
 
-`mailhog_env_vars` is specific and can be used to configure MailHog using
+`mailhog__env_vars` is specific and can be used to configure MailHog using
 [environment
 variables](https://github.com/mailhog/MailHog/blob/master/docs/CONFIG.md).
 
@@ -48,4 +48,4 @@ mailhog__env_vars:
 
 This role was created in 2014 by [Jeff
 Geerling](https://www.jeffgeerling.com/), author of [Ansible for
-DevOps](https://www.ansiblefordevops.com/) and forked in 2020 by Inverse Inc.
+DevOps](https://www.ansiblefordevops.com/) and forked in 2020 by Inverse inc.

@@ -27,7 +27,7 @@ authors:
 description: Utils used to test PacketFence
 
 # Either a single license or a list of licenses for content inside of a collection. Ansible Galaxy currently only
-# accepts L(SPDX,Https://spdx.org/licenses/) licenses. This key is mutually exclusive with 'license_file'
+# accepts L(SPDX,https://spdx.org/licenses/) licenses. This key is mutually exclusive with 'license_file'
 license:
 - GPL-3.0-only
 - MIT
