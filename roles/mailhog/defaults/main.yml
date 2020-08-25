@@ -1,0 +1,8 @@
+---
+mailhog__install_dir: /opt/mailhog
+mailhog__env_file: "{{ mailhog__install_dir }}/mailhog.env"
+mailhog__env_vars: []
+mailhog__version: 1.0.1
+mailhog__binary_url: "https://github.com/mailhog/MailHog/releases/download/v{{ mailhog__version }}/MailHog_linux_amd64"
+mhsendmail__version: 0.2.0
+mhsendmail__binary_url: "https://github.com/mailhog/mhsendmail/releases/download/v{{ mhsendmail__version }}/mhsendmail_linux_amd64"
