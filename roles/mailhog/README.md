@@ -14,7 +14,9 @@ See [defaults variables](defaults/main.yml)
 
 `mailhog__env_vars` is specific and can be used to configure MailHog using
 [environment
-variables](https://github.com/mailhog/MailHog/blob/master/docs/CONFIG.md).
+variables](https://github.com/mailhog/MailHog/blob/master/docs/CONFIG.md). Environment
+variables are set in a dedicated environment file, sourced by systemd unit
+used to start MailHog. In any cases, they are defined for all processes.
 
 Example:
 
