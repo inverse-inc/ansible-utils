@@ -1,0 +1,32 @@
+---
+# defaults file for hostapd
+hostapd__eap_server: '0'
+hostapd__ieee8021x: '1'
+hostapd__driver: 'wired'
+hostapd__dynamic_vlan: '0'
+hostapd__interfaces: ''
+hostapd__mab_interfaces: ''
+hostapd__voice_interfaces: ''
+hostapd__parking_vlan_interfaces: ''
+hostapd__parking_vlan_id: ''
+hostapd__mab_activation_delay: '30'
+hostapd__max_num_sta: '4'
+hostapd__eap_reauth_period: '0'
+hostapd__eap_send_identity: '0'
+hostapd__ctrl_interface: '/var/run/hostapd'
+hostapd__nas_identifier: 'localhost'
+hostapd__auth_server_addr: ''
+hostapd__auth_server_port: '1812'
+hostapd__auth_server_shared_secret: ''
+hostapd__acct_server_addr: ''
+hostapd__acct_server_port: '1813'
+hostapd__acct_server_shared_secret: ''
+hostapd__radius_das_port: '3799'
+hostapd__radius_das_client: ''
+hostapd__radius_das_time_window: '300'
+hostapd__radius_das_require_event_timestamp: '1'
+hostapd__radius_das_require_message_authenticator: '1'
+
+# hostapd service
+hostapd__state: started
+hostapd__enabled: True

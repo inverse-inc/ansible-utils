@@ -1,0 +1,15 @@
+---
+# tasks file for restserver
+- name: Start and enable HTTP API service
+  service:
+    name: restserver
+    state: "{{ restserver__state }}"
+    enabled: "{{ restserver__enabled }}"
+
+- name: Listen on all interfaces
+  lineinfile:
+    path: "{{ restserver__nginx_config_file }}"
+    regexp: 'listen localhost:8080 ssl;'
+    line: 'listen [::]:8080 ipv6only=off ssl;'
+    state: present
+  notify: restart nginx

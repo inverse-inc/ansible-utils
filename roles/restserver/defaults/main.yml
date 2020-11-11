@@ -1,0 +1,6 @@
+---
+# defaults file for restserver
+restserver__enabled: True
+restserver__state: started
+restserver__nginx_config_file: /etc/nginx/sites-available/nginx-restapi.conf
+
