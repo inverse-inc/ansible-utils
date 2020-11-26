@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Role `wpa_supplicant` Allow to manage state of wpa_supplicant service
+- Role `hostap` host access point daemon
+- Role `restserver` to enable HTTP API service
+- Playbook `venom` from [packetfence collection](https://github.com/inverse-inc/ansible-packetfence)
+- Role modules should be in `plugins` directory in place of `library` directory
+- Import and lint of domain-setup and adcs-enrollment roles from
+  [upstream ansible-windows repository](https://github.com/jborean93/ansible-windows)
 
 ## [1.1.0] - 2020-09-22
 
