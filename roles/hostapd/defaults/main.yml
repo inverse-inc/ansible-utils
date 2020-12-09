@@ -30,3 +30,5 @@ hostapd__radius_das_require_message_authenticator: '1'
 # hostapd service
 hostapd__state: started
 hostapd__enabled: True
+
+hostapd__pkg_update_cache: true

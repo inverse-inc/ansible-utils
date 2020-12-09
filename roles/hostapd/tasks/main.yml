@@ -1,5 +1,8 @@
 ---
 # tasks file for hostapd
+- name: Ensure wpasupplicant installed
+  include_tasks: install.yml
+
 - name: Configure hostapd for RADIUS
   template:
     src: hostapd.conf.j2
