@@ -4,9 +4,9 @@
   block:
     - name: Install wpa-supplicant
       apt:
-        name: wpa_supplicant
+        name: '{{ wpasupplicant__pkg_name_d }}'
         state: latest
-        update_cache: yes
+        update_cache: '{{ wpasupplicant__pkg_update_cache }}'
   rescue:
     - name: Print when errors
       ansible.builtin.debug:
@@ -21,13 +21,13 @@
         name:
           - epel-release
         state: latest
-        update_cache: yes
+        update_cache: '{{ wpasupplicant__pkg_update_cache }}'
 
     - name: Install wpa_supplicant
       yum:
-        name: wpa_supplicant
+        name: '{{ wpasupplicant__pkg_name_c }}'
         state: latest
-        update_cache: yes
+        update_cache: '{{ wpasupplicant__pkg_update_cache }}'
   rescue:
     - name: Print when errors
       ansible.builtin.debug:
