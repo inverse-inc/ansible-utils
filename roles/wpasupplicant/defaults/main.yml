@@ -2,57 +2,59 @@
 # defaults file for wpasupplicant
 wpasupplicant__pkg_name: 'wpasupplicant'
 wpasupplicant__pkg_update_cache: 'no'
-wpasupplicant__conf_dir: '/etc/wpasupplicant'
+wpasupplicant__conf_dir: '/etc/wpa_supplicant'
 
-wpasupplicant__service: 'wpasupplicant'
+wpasupplicant__service: 'wpa_supplicant'
 wpasupplicant__enabled: True
 wpasupplicant__state: started
 
-wpasupplicant__configs:
+wpasupplicant__identity: "inverse"
+wpasupplicant__password:  "secret"
 
-  - name: eap_tls
+wpasupplicant__configs:
+  - name: 'eap_tls'
     dir: '{{ wpasupplicant__conf_dir }}/eap_tls'
     filename: 'eap_tls.conf'
     ctrl_interface_group: 0
     eapol_version: 2
     ap_scan: 0
-    key_mgmt: IEEE8021X
-    eap: TLS
-    ca_cert: "{{ item.dir }}/ca.pem"
-    client_cert: "{{ item.dir }}/client.pem"
-    private_key: "{{ item.dir}}/client.key"
+    key_mgmt: 'IEEE8021X'
+    eap: 'TLS'
+    ca_cert: "{{ wpasupplicant__conf_dir }}/eap_tls/ca.pem"
+    client_cert: "{{ wpasupplicant__conf_dir }}/eap_tls/client.pem"
+    private_key: "{{ wpasupplicant__conf_dir }}/eap_tls/client.key"
     private_key_passwd: 'whatever'
     eapol_flags: 3
 
-  - name: eap_peap_mschapv2
-    dir: '{{ conf_dir }}/eap_peap'
+  - name: 'eap_peap_mschapv2'
+    dir: '{{ wpasupplicant__conf_dir }}/eap_peap'
     filename: 'eap_peap_mschapv2.conf'
     ctrl_interface_group: 0
     eapol_version: 2
     ap_scan: 0
-    key_mgmt: IEEE8021X
-    eap: PEAP
-    identity: 'inverse'
-    password: 'secret'
+    key_mgmt: 'IEEE8021X'
+    eap: 'PEAP'
+    identity: '{{ wpasupplicant__identity }}'
+    password: '{{ wpasupplicant__password }}'
     phase2: "autheap: MSCHAPV2"
     eapol_flags: 3
 
-  - name: wireless_open
-    dir: '{{ conf_dir }}/wireless_open'
+  - name: 'wireless_open'
+    dir: '{{ wpasupplicant__conf_dir }}/wireless_open'
     filename: 'wireless_open.conf'
     ssid: 'PF-Open'
     key_mgmt: 'NONE'
     priority: '100'
 
-  - name: wireless_secure
-    dir: '{{ conf_dir }}/wireless_secure'
+  - name: 'wireless_secure'
+    dir: '{{ wpasupplicant__conf_dir }}/wireless_secure'
     filename: 'wireless_secure.conf'
     ssid: 'PF-Secure'
     key_mgmt: 'WPA-EAP'
     eap: 'PEAP'
     phase2: 'NONE'
-    identity: 'bob'
-    password: 'bobspassword'
+    identity: '{{ wpasupplicant__identity }}'
+    password: '{{ wpasupplicant__password }}'
 
 configs_available_values:
   ctrl_interface: '' # default('/var/run/wpasupplicant')
