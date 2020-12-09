@@ -1,11 +1,11 @@
 ctrl_interface="{{ item.ctrl_interface | default('/var/run/wpasupplicant') }}
-{% if item.ctrl_interface_group is defined and item.ctrl_interface_group | length %}
+{% if item.ctrl_interface_group is defined and item.ctrl_interface_group is number %}
 ctrl_interface_group="{{ item.ctrl_interface_group }}"
 {% endif %}
-{% if item.eapol_version is defined and item.eapol_version | length %}
+{% if item.eapol_version is defined and item.eapol_version is number %}
 eapol_version="{{ item.eapol_version }}"
 {% endif %}
-{% if item.ap_scan is defined and item.ap_scan | length %}
+{% if item.ap_scan is defined and item.ap_scan is number %}
 ap_scan="{{ item.ap_scan }}"
 {% endif %}
 
@@ -31,7 +31,7 @@ network={
 {% if item.private_key_passwd is defined and item.private_key_passwd | length %}
     private_key_passwd="{{ item.private_key_passwd }}"
 {% endif %}
-{% if item.eapol_flags is defined and item.eapol_flags | length %}
+{% if item.eapol_flags is defined and item.eapol_flags is number %}
     eapol_flags="{{ item.eapol_flags }}"
 {% endif %}
 {% if item.eap is defined and item.eap | length %}
