@@ -1,6 +1,6 @@
 ---
 # Debian install
-- name: [Debian] install on Debian
+- name: (Debian) install on Debian
   block:
     - name: Install wpa-supplicant
       apt:
@@ -14,7 +14,7 @@
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 # Redhat install
-- name: [Redhat] Install on Redhat
+- name: (Redhat) Install on Redhat
   block:
     - name: Install epel-release
       yum:
