@@ -8,14 +8,14 @@
       apt:
         name: "linux-image-extra-{{ ansible_kernel }}"
         state: latest
-        update_cache: {{ hostapd__pkg_update_cache }}
+        update_cache: '{{ hostapd__pkg_update_cache }}'
 
     - name: (Debian) Install epel-release and kmod
       apt:
         name:
           - kmod
         state: latest
-        update_cache: {{ hostapd__pkg_update_cache }}
+        update_cache: '{{ hostapd__pkg_update_cache }}'
 
     - name: (Debian) Install hostapd
       apt:
@@ -24,7 +24,7 @@
           - wireless-tools
         enablerepo: epel
         state: latest
-        update_cache: {{ hostapd__pkg_update_cache }}
+        update_cache: '{{ hostapd__pkg_update_cache }}'
       notify: restart hostapd
 
   rescue:
@@ -42,14 +42,14 @@
           - epel-release
           - kmod
         state: latest
-        update_cache: {{ hostapd__pkg_update_cache }}
+        update_cache: '{{ hostapd__pkg_update_cache }}'
 
     - name: (Redhat)  Install hostapd
       yum:
         name: hostapd
         enablerepo: epel
         state: latest
-        update_cache: {{ hostapd__pkg_update_cache }}
+        update_cache: '{{ hostapd__pkg_update_cache }}'
       notify: restart hostapd
 
   rescue:
@@ -57,7 +57,3 @@
       ansible.builtin.debug:
         msg: 'I caught an error'
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-
-
-
-
