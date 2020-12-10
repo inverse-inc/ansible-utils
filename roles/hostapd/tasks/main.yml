@@ -31,4 +31,4 @@
         state: "{{ hostapd__state }}"
         enabled: "{{ hostapd__enabled }}"
 
-  when: "'cumulus' in inventory_hostname"
+  when: "'switch01' in inventory_hostname"
