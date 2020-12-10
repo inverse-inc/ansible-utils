@@ -1,0 +1,17 @@
+---
+# hostapd configuration for wireless
+- name: Configure hostapd default
+  template:
+    src: hostapd_default.conf.j2
+    dest: /etc/hostapd/hostapd.conf
+    backup: yes
+  notify: restart hostapd
+
+- name: Configure hostapd open and secure for RADIUS
+  template:
+    src: w_hostapd.conf.j2
+    dest: '/etc/hostapd/hostapd_{{ item.name }}.conf'
+    backup: yes
+  loop:
+    - '{{ open }}'
+    - '{{ secure }}'

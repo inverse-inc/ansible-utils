@@ -1,0 +1,14 @@
+---
+# hostapd kernel for wireless
+# Kernel Module
+- name: Add the mac80211_hwsim module
+  # check grep HWSIM /boot/config-$(uname -r) to check if installed in the kernel
+  community.general.modprobe:
+    name: mac80211_hwsim
+    state: present
+  notify: restart hostapd
+
+- name: Add the mac80211_hwsim module at boot
+  template:
+    src: hostapd_kernel_boot.conf.j2
+    dest: /etc/modules-load.d/hostapd.conf

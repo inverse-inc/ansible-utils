@@ -1,0 +1,63 @@
+---
+# hostapd installation for wireless
+# Debian install
+- name: (Debian) Install hostapd and dependencies
+  block:
+    - name: (Debian) install linux linux-headers
+      ignore_errors: True
+      apt:
+        name: "linux-image-extra-{{ ansible_kernel }}"
+        state: latest
+        update_cache: {{ hostapd__pkg_update_cache }}
+
+    - name: (Debian) Install epel-release and kmod
+      apt:
+        name:
+          - kmod
+        state: latest
+        update_cache: {{ hostapd__pkg_update_cache }}
+
+    - name: (Debian) Install hostapd
+      apt:
+        name:
+          - hostap-utils
+          - wireless-tools
+        enablerepo: epel
+        state: latest
+        update_cache: {{ hostapd__pkg_update_cache }}
+      notify: restart hostapd
+
+  rescue:
+    - name: Print when errors
+      ansible.builtin.debug:
+        msg: 'I caught an error'
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+# Redhat install
+- name: (Redhat) Install hostapd and dependencies
+  block:
+    - name: (Redhat)  Install epel-release and kmod
+      yum:
+        name:
+          - epel-release
+          - kmod
+        state: latest
+        update_cache: {{ hostapd__pkg_update_cache }}
+
+    - name: (Redhat)  Install hostapd
+      yum:
+        name: hostapd
+        enablerepo: epel
+        state: latest
+        update_cache: {{ hostapd__pkg_update_cache }}
+      notify: restart hostapd
+
+  rescue:
+    - name: Print when errors
+      ansible.builtin.debug:
+        msg: 'I caught an error'
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+
+
+

@@ -1,16 +1,34 @@
 ---
-# tasks file for hostapd
-- name: Ensure wpasupplicant installed
-  include_tasks: install.yml
+# tasks file for hostapd wireless
+- name: hostapd Wireless
+  block:
+    - name: Ensure wpasupplicant installed
+      include_tasks: w_install.yml
 
-- name: Configure hostapd for RADIUS
-  template:
-    src: hostapd.conf.j2
-    dest: /etc/hostapd.conf
-  notify: apply changes
+    - name: Ensure wpasupplicant installed
+      include_tasks: w_kernel.yml
 
-- name: Start and enable hostapd service
-  service:
-    name: hostapd
-    state: "{{ hostapd__state }}"
-    enabled: "{{ hostapd__enabled }}"
+    - name: Ensure wpasupplicant installed
+      include_tasks: w_configure.yml
+
+    - name: Ensure wpasupplicant installed
+      include_tasks: w_services.yml
+
+  when: "'wireless' in inventory_hostname"
+
+# tasks file for hostapd cumlus
+- name: hostapd Cumulus
+  block:
+    - name: Configure hostapd for RADIUS
+      template:
+        src: hostapd.conf.j2
+        dest: /etc/hostapd.conf
+      notify: apply changes
+
+    - name: Start and enable hostapd service
+      service:
+        name: hostapd
+        state: "{{ hostapd__state }}"
+        enabled: "{{ hostapd__enabled }}"
+
+  when: "'cumulus' in inventory_hostname"

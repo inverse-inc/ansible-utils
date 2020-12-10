@@ -1,0 +1,143 @@
+{% if item.hostapd__acct_server_addr is defined and item.hostapd__acct_server_addr|length %}
+acct_server_addr={{ item.hostapd__acct_server_addr }}
+{% endif %}
+
+{% if item.hostapd__acct_server_port is defined and item.hostapd__acct_server_port|length %}
+acct_server_port={{ item.hostapd__acct_server_port }}
+{% endif %}
+
+{% if item.hostapd__acct_server_shared_secret is defined and item.hostapd__acct_server_shared_secret|length %}
+acct_server_shared_secret={{ item.hostapd__acct_server_shared_secret }}
+{% endif %}
+
+{% if item.hostapd__auth_algs is defined and item.hostapd__auth_algs|length %}
+auth_algs={{ item.hostapd__auth_algs }}
+{% endif %}
+
+{% if item.hostapd__auth_server_addr is defined and item.hostapd__auth_server_addr|length %}
+auth_server_addr={{ item.hostapd__auth_server_addr }}
+{% endif %}
+
+{% if item.hostapd__auth_server_port is defined and item.hostapd__auth_server_port|length %}
+auth_server_port={{ item.hostapd__auth_server_port }}
+{% endif %}
+
+{% if item.hostapd__auth_server_shared_secret is defined and item.hostapd__auth_server_shared_secret|length %}
+auth_server_shared_secret={{ item.hostapd__auth_server_shared_secret }}
+{% endif %}
+
+{% if item.hostapd__ctrl_interface is defined and item.hostapd__ctrl_interface|length %}
+ctrl_interface={{ item.hostapd__ctrl_interface }}
+{% endif %}
+
+{% if item.hostapd__ctrl_interface_group is defined and item.hostapd__ctrl_interface_group|length %}
+ctrl_interface_group={{ item.hostapd__ctrl_interface_group }}
+{% endif %}
+
+{% if item.hostapd__driver is defined and item.hostapd__driver|length %}
+driver={{ item.hostapd__driver }}
+{% endif %}
+
+{% if item.hostapd__dynamic_vlan is defined and item.hostapd__dynamic_vlan|length %}
+dynamic_vlan={{ item.hostapd__dynamic_vlan }}
+{% endif %}
+
+{% if item.hostapd__eap_reauth_period is defined and item.hostapd__eap_reauth_period|length %}
+eap_reauth_period={{ item.hostapd__eap_reauth_period }}
+{% endif %}
+
+{% if item.hostapd__eap_send_identity is defined and item.hostapd__eap_send_identity|length %}
+eap_send_identity={{ item.hostapd__eap_send_identity }}
+{% endif %}
+
+{% if item.hostapd__eap_server is defined and item.hostapd__eap_server|length %}
+eap_server={{ item.hostapd__eap_server }}
+{% endif %}
+
+{% if item.hostapd__hw_mode is defined and item.hostapd__hw_mode|length %}
+hw_mode={{ item.hostapd__hw_mode }}
+{% endif %}
+
+{% if item.hostapd__ieee8021x is defined and item.hostapd__ieee8021x|length %}
+ieee8021x={{ item.hostapd__ieee8021x }}
+{% endif %}
+
+{% if item.hostapd__interface is defined and item.hostapd__interface|length %}
+interface={{ item.hostapd__interface }}
+{% endif %}
+
+{% if item.hostapd__logger_syslog is defined and item.hostapd__logger_syslog|length %}
+logger_syslog={{ item.hostapd__logger_syslog }}
+{% endif %}
+
+{% if item.hostapd__mab_interfaces is defined and item.hostapd__mab_interfaces|length %}
+mab_interfaces={{ item.hostapd__mab_interfaces }}
+{% endif %}
+
+{% if item.hostapd__mab_activation_delay is defined and item.hostapd__mab_activation_delay|length %}
+mab_activation_delay={{ item.hostapd__mab_activation_delay }}
+{% endif %}
+
+{% if item.hostapd__macaddr_acl is defined and item.hostapd__macaddr_acl|length %}
+macaddr_acl={{ item.hostapd__macaddr_acl }}
+{% endif %}
+
+{% if item.hostapd__max_num_sta is defined and item.hostapd__max_num_sta|length %}
+max_num_sta={{ item.hostapd__max_num_sta }}
+{% endif %}
+
+{% if item.hostapd__nas_identifier is defined and item.hostapd__nas_identifier|length %}
+nas_identifier={{ item.hostapd__nas_identifier }}
+{% endif %}
+
+{% if item.hostapd__own_ip_addr is defined and item.hostapd__own_ip_addr|length %}
+own_ip_addr={{ item.hostapd__own_ip_addr }}
+{% endif %}
+
+{% if item.hostapd__parking_vlan_interfaces is defined and item.hostapd__parking_vlan_interfaces|length %}
+parking_vlan_interfaces={{ item.hostapd__parking_vlan_interfaces }}
+{% endif %}
+
+{% if item.hostapd__parking_vlan_id is defined and item.hostapd__parking_vlan_id|length %}
+parking_vlan_id={{ item.hostapd__parking_vlan_id }}
+{% endif %}
+
+{% if item.hostapd__radius_das_port is defined and item.hostapd__radius_das_port|length %}
+radius_das_port={{ item.hostapd__radius_das_port }}
+{% endif %}
+
+{% if item.hostapd__radius_das_client is defined and item.hostapd__radius_das_client|length %}
+radius_das_client={{ item.hostapd__radius_das_client }}
+{% endif %}
+
+{% if item.hostapd__radius_das_time_window is defined and item.hostapd__radius_das_time_window|length %}
+radius_das_time_window={{ item.hostapd__radius_das_time_window }}
+{% endif %}
+
+{% if item.hostapd__radius_das_require_event_timestamp is defined and item.hostapd__radius_das_require_event_timestamp|length %}
+radius_das_require_event_timestamp={{ item.hostapd__radius_das_require_event_timestamp }}
+{% endif %}
+
+{% if item.hostapd__radius_das_require_message_authenticator is defined and item.hostapd__radius_das_require_message_authenticator|length %}
+radius_das_require_message_authenticator={{ item.hostapd__radius_das_require_message_authenticator }}
+{% endif %}
+
+{% if item.hostapd__ssid is defined and item.hostapd__ssid|length %}
+ssid={{ item.hostapd__ssid }}
+{% endif %}
+
+{% if item.hostapd__voice_interfaces is defined and item.hostapd__voice_interfaces|length %}
+voice_interfaces={{ item.hostapd__voice_interfaces }}
+{% endif %}
+
+{% if item.hostapd__wpa is defined and item.hostapd__wpa|length %}
+wpa={{ item.hostapd__wpa }}
+{% endif %}
+
+{% if item.hostapd__wpa_key_mgmt is defined and item.hostapd__wpa_key_mgmt|length %}
+wpa_key_mgmt={{ item.hostapd__wpa_key_mgmt }}
+{% endif %}
+
+{% if item.hostapd__wpa_pairwise is defined and item.hostapd__wpa_pairwise|length %}
+wpa_pairwise={{ item.hostapd__wpa_pairwise }}
+{% endif %}
