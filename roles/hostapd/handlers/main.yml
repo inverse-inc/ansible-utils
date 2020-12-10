@@ -9,3 +9,9 @@
   command: net commit
   become: true
   listen: apply changes
+
+- name: restart hostapd
+  service:
+    name: hostapd.service
+    state: restarted
+...
