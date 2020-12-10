@@ -21,8 +21,6 @@
       apt:
         name:
           - hostapd
-          - hostap-utils
-          - wireless-tools
         state: latest
         update_cache: '{{ hostapd__pkg_update_cache }}'
       notify: restart hostapd
