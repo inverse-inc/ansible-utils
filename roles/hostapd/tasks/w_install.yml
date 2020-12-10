@@ -20,9 +20,9 @@
     - name: (Debian) Install hostapd
       apt:
         name:
+          - hostapd
           - hostap-utils
           - wireless-tools
-        enablerepo: epel
         state: latest
         update_cache: '{{ hostapd__pkg_update_cache }}'
       notify: restart hostapd
