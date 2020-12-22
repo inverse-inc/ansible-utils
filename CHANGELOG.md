@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2020-12-22
+
+### Changed
+- Role `venom` always installed `venom__version` (#5)
+
 ## [1.1.0] - 2020-09-22
 
 ### Added
@@ -18,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Role `psonoci` to get secrets from a Psono server
 - Role `venom` to run integration tests against PacketFence server
 
-[Unreleased]: https://github.com/inverse-inc/ansible-utils/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/inverse-inc/ansible-utils/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/inverse-inc/ansible-utils/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/inverse-inc/ansible-utils/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/inverse-inc/ansible-utils/releases/tag/v1.0.0
