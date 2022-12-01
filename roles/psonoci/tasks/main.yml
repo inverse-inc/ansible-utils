@@ -7,3 +7,7 @@
     force: yes    
     owner: 'root'
     group: 'root'
+  register: reg_install_psonoci
+  retries: 5
+  delay: 10
+  until: reg_install_psonoci is succeeded
