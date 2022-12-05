@@ -20,6 +20,10 @@
       dest: "{{ mailhog__install_dir }}/mailhog"
     - url: "{{ mhsendmail__binary_url }}"
       dest: "{{ mailhog__install_dir }}/mhsendmail"
+  register: reg_install_mailhog
+  retries: 5
+  delay: 10
+  until: reg_install_mailhog is succeeded
 
 - name: Copy mailhog systemd unit file into place
   template:

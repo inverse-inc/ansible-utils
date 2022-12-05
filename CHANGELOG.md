@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2022-12-05
+### Added
+- Retry tasks which need Internet access until success
+
 ## [1.1.1] - 2020-12-22
 
 ### Changed
@@ -23,7 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Role `psonoci` to get secrets from a Psono server
 - Role `venom` to run integration tests against PacketFence server
 
-[Unreleased]: https://github.com/inverse-inc/ansible-utils/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/inverse-inc/ansible-utils/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/inverse-inc/ansible-utils/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/inverse-inc/ansible-utils/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/inverse-inc/ansible-utils/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/inverse-inc/ansible-utils/releases/tag/v1.0.0
